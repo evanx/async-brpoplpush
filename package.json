@@ -1,11 +1,14 @@
 {
   "name": "async-brpoplpush",
   "version": "1.0.0",
-  "description": "",
+  "description": "async (promisified) function for Redis blocking brpoplpush command",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evanx/async-brpoplpush.git"
+  },
+  "author": "Evan Summers <evan.summers@gmail.com>",
   "license": "ISC"
 }

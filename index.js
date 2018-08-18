@@ -5,18 +5,4 @@ const brpoplpush = (client, ...args) => new Promise(
         )
     )
 
-const consumer = async ({ props, logger, client, service }) => {
-    const requestId = await brpoplpush(client, 'hreq:q', 'hreq:p:q', props.popTimeoutSeconds)
-    if (!requestId) {
-        logger.warn('No service request')
-    } else {
-        logger.debug({ requestId })
-        const [req] = await rtx(client, tx => {
-            tx.hgetall(`hreq:${requestId}:h`)
-        })
-        logger.debug({ req })
-        await service({ props, logger, client, req })
-    }
-}
-
-module.exports = consumer
+module.exports = brpoplpush
