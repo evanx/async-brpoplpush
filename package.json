@@ -1,5 +1,5 @@
 {
-  "name": "async-brpoplpush",
+  "name": "brpoplpush-async",
   "version": "1.0.0",
   "description": "async (promisified) function for Redis blocking brpoplpush command",
   "main": "index.js",
